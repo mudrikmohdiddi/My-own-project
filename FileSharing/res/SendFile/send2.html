@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileSendMC</title>
+    
+    <link rel="stylesheet" href="mystyle1.css">
+    <link rel="stylesheet" href="mystyle2.css">
+    <style>
+        #option{
+            width: 300px;
+            height: 50px;
+            border: 1px solid blue;
+            font-size: large;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        *[id],*[class]{
+            font-weight: bold;
+            
+        }
+        .saveText{
+            background-color: yellowgreen;
+            color: cyan;
+        }
+        td{
+            padding: 5px;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+<div class="containerall">
+    <div class="uploadALL">
+    <div id="upl">
+    <div id="upload" align="center">
+        <a id="appm" href="FileSendMC.apk">🎉Dowload mobile app🎉</a>
+       
+        <h1>🎉FileSendMC🎉</h1>
+        
+        <p id="myname"></p>
+        <h1 id="visitor"></h1>
+        <h1 id="connect">🎉🎉🎉🎉🎉</h1>
+        <button id="menu" onclick="menu()" style="background-color: black; color:cyan">OPEN MENU</button><br><br><br>
+       
+         
+        <div id="menus">
+            <table id="mypc">
+                <tr>
+                    <td><br><br><br>
+        <a href="myname.php" id="nameshow"><button>RESET NAME</button></a>
+    </td>
+    <td>
+        <div id="send"><input type="file" id="fileInput" multiple></div><br><br>
+        <input type="button" id="uploadfile" onclick="uploadFile()" class="upload" value="Upload" style="color: cyan;"><br><br>
+        
+           <div id="choose">
+            <select name="option" onchange="table()" id="option">
+                <option value="">🎉Select group🎉</option>
+            </select>
+        </div>
+    </td>
+    <td><br><br><br><br>
+        <button onclick="add()" style=" background-color:yellowgreen">ADD</button>
+        
+        <br><br><br>
+        <input type="text" id="writedata" placeholder="🎉Write group name need add🎉" style="text-align: center; background-color:black; color:cyan">
+       
+    </td>
+    <td>
+        <br><br><br><br>
+        <input type="button" id="change" onclick="gtv()" value="Go to view =>">
+        <br><br>
+    </td>
+    </tr>
+    </table>
+<div id="myphone">
+    <a href="myname.php" id="nameshow"><button>RESET NAME</button></a>
+    <h1>Upload File</h1>
+    <div id="send"><input type="file" id="fileInput" multiple></div><br><br>
+    <input type="button" id="uploadfile" onclick="uploadFile()" class="upload" value="Upload" style="color: cyan;"><br><br>
+    
+       <div id="choose">
+        <select name="option" onchange="table()" id="option">
+            <option value="">🎉Select group🎉</option>
+        </select>
+    </div> <button onclick="add()" style="width: 80px; background-color:yellowgreen">ADD</button>
+    
+    <br><br>
+    <input type="text" id="writedata" placeholder="🎉Write group name need add🎉" style="text-align: center; background-color:black; color:cyan">
+    <br><br>
+    <input type="button" id="change" onclick="gtv()" value="Go to view =>"><br><br>
+    
+</div>
+    </div>
+
+     
+    </div>
+    </div>
+    <div id="rec">
+    <div id="receive" align="center">
+        <p id="myname2"></p>
+        <h1 id="viewfile">View file</h1>
+       
+        <div id="maba">
+            <button id="groupdelete" onclick="groupdelete()" style="background-color: green; color:cyan">😢Delete😢Group😢</button><br><br>
+       <br> </div>
+        <button id="change" onclick="bfu()"><= Back from upload?</button>
+        <br><br><br>
+        <button id="accending" onclick="arrange()" style="background-color: palevioletred;">Default</button><br><br><br>
+        <div id="dod2"></div>
+        <br><br>
+        <div id="coverselect">
+            <div id="select"></div>
+        </div><br><br>
+        <div id="audioBTN2">
+            <button id="audioBTN" onclick="playPlaylist()">play all audio</button><br>
+           
+        <br>
+        </div>
+        <div id="videoBTN2">
+            <button id="videoBTN" onclick="playVideolist()">play all video</button><br>
+        </div>
+       
+       
+        <p id="pro"></p>
+    <h2>
+        <ol>
+            <div id="dataR"></div>
+        </ol>
+    </h2><br><br>
+    <button id="change" onclick="bfu()"><= Back from upload?</button>
+    <br><br>
+        <div id="gtst"></div>
+    <br><br>
+    
+    <div id="delete2"></div>
+    
+    
+    </div>
+    
+    <div class="secrete" id="secrete"></div>
+    <div class="secrete" id="secrete2"></div>
+    <div class="secrete" id="secrete3"></div>
+    <div class="secrete" id="secrete4"></div>
+</div>
+</div><br>
+
+   
+    <script>
+        function mobile(){
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+        if(!mobile()){
+            document.getElementById("appm").style.display = 'none';
+            
+        }
+       
+      function seperate(){
+        if(mobile()){
+            document.getElementById("mypc").remove("total");
+        }
+        else{
+            document.getElementById("myphone").remove("total");
+        }
+      }
+      seperate();
+        //id="accending" onclick="arrange()" style="background-color: palevioletred;">Default
+       
+        document.getElementById("menus").style.display = "none";
+        mL = 0;
+        function menu(){
+            if(mL == 0){
+                document.getElementById("menus").style.display = "block";
+                document.getElementById("menu").innerHTML = "CLOSE MENU";
+                this.mL = 1;
+            }
+            else{
+                document.getElementById("menus").style.display = "none";
+                document.getElementById("menu").innerHTML = "OPEN MENU";
+                this.mL = 0;
+            }
+        }
+        function myname(){
+            fetch("myname2.php")
+            .then(response => response.json())
+            .then(data => {
+                sname = data.split("*")[1];
+                localStorage.setItem("sname",this.sname);
+
+                data2 = data.split("*")[0];
+                document.getElementById("myname").innerHTML = "User: 🎉"+data2+"🎉";
+                document.getElementById("myname2").innerHTML = "User: 🎉"+data2+"🎉";
+
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        myname();
+        function you2(){
+            fetch("http://localhost/sendfile/you.php")
+            .then(response => response.json())
+            .then(data => {
+                
+                document.getElementById("maba").style.display = "black";
+                
+            })
+            .catch(error => {
+                sname = localStorage.getItem("sname");
+                pname = localStorage.getItem("tname") || "coder";
+                if(sname == pname){
+                    document.getElementById("maba").style.display = "black";
+                }
+                else{
+                    document.getElementById("maba").style.display = "none";
+                    document.getElementById("nameshow").style.display = "none";
+                    document.getElementById("visitor").innerHTML = "🎉VISITOR";
+                }
+
+                
+            });  
+        }
+        you2();
+       
+
+        function profile(){
+            fetch("myprofile.php")
+            .then(response => response.json())
+            .then(data => {
+                document.body.style.backgroundImage = "url("+data+")";
+                document.body.style.backgroundPosition = "center";
+                document.body.style.backgroundSize = "cover";
+
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        profile();
+        //<iframe id="OD" frameborder="3" width="320" height="240"></iframe>
+    </script>
+    <script src="myanimation.js"> 
+        
+    </script>
+</div>    
+
+</body>
+</html>

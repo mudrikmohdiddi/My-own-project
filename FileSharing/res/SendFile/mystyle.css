@@ -1,0 +1,74 @@
+
+input,button{
+    
+    width: 300px;
+    height: 50px;
+    border: 1px solid blue;
+    font-size: large;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+#upload{
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    border-radius: 10px;
+    animation: pop 1s infinite alternate;
+    text-align: center;
+    
+}
+
+#receive{
+    background-color: cyan;
+    color: black;
+    padding: 0px;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    border-radius: 10px;
+    text-align: center;
+    animation: pop 1s alternate;
+   
+}
+.all{
+    text-align: center;
+    width: 800px;
+}
+
+#delete{
+    background-color: red;
+    color: cyan;
+}
+.upload{
+    background-color: blue;
+}
+.selectALL{
+    font-size: xx-large;
+    
+}
+.secrete{
+    display: none;
+}
+.secrete2{
+    display: none;
+}
+.secrete3{
+    display: none;
+}
+.secrete4{
+    display: none;
+}
+.uploadALL{
+    text-align: center;
+}
+.dod{
+    background-color: rgb(182, 172, 180);
+    color: cyan;
+    
+}
+@keyframes pop {
+    0% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+    
+}

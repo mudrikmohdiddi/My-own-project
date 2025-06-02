@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileSendMC</title>
+    
+    <link rel="stylesheet" href="mystyle1.css">
+    <link rel="stylesheet" href="mystyle2.css">
+    <style>
+        .search{
+            text-align: center;
+            font-size: x-large;
+            font-weight: bold;
+            background-color: lightblue;
+        }
+        #option{
+            width: 300px;
+            height: 50px;
+            border: 1px solid blue;
+            font-size: large;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        *[id],*[class]{
+            font-weight: bold;
+            
+        }
+        .saveText{
+            background-color: yellowgreen;
+            color: cyan;
+        }
+        td{
+            padding: 5px;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+<div class="containerall">
+    <div class="uploadALL">
+    <div id="upl">
+    <div id="upload" align="center">
+        <a id="appm" href="FileSendMC.apk">🎉Dowload mobile app🎉</a>
+       
+        <h1>🎉FileSendMC🎉</h1>
+        
+        <p id="myname"></p>
+        <h1 id="visitor"></h1>
+        <h1 id="connect">🎉🎉🎉🎉🎉</h1>
+        <button id="menu" onclick="menu()" style="background-color: black; color:cyan">OPEN MENU</button><br><br><br>
+       
+         
+        <div id="menus">
+            <table id="mypc">
+                <tr>
+                    <td><br><br><br>
+        <a href="myname.php" id="nameshow"><button>RESET NAME</button></a>
+    </td>
+    <td>
+        <div id="send"><input type="file" id="fileInput" multiple></div><br><br>
+        <input type="button" id="uploadfile" onclick="uploadFile()" class="upload" value="Upload" style="color: cyan;"><br><br>
+        
+           <div id="choose" onmouseout="futa()">
+            <select name="option" onchange="table()" id="option">
+                <option value="">🎉Select group🎉</option>
+            </select>
+        </div>
+    </td>
+    <td><br><br><br><br>
+        <button onclick="add()" style=" background-color:yellowgreen">ADD</button>
+        
+        <br><br><br>
+        <input type="text" id="writedata" placeholder="🎉Write group name need add🎉" style="text-align: center; background-color:black; color:cyan">
+       
+    </td>
+    <td>
+        <br>
+        <input list="searchData" class="search" id="searchInput" placeholder="Search" name="mc" oninput="Check()">
+        <datalist id="searchData"></datalist>
+        <br><br>
+        
+        <br><br>
+        <input type="button" id="change" onclick="gtv()" value="Go to view =>">
+        <br><br>
+    </td>
+    </tr>
+    </table>
+<div id="myphone">
+    <a href="myname.php" id="nameshow"><button>RESET NAME</button></a>
+    <h1>Upload File</h1>
+    <div id="send"><input type="file" id="fileInput" multiple></div><br><br>
+    <input type="button" id="uploadfile" onclick="uploadFile()" class="upload" value="Upload" style="color: cyan;"><br><br>
+    
+       <div id="choose">
+        <select name="option" onchange="table()" id="option">
+            <option value="">🎉Select group🎉</option>
+        </select>
+    </div> <button onclick="add()" style="width: 80px; background-color:yellowgreen">ADD</button>
+    
+    <br><br>
+    <input type="text" id="writedata" placeholder="🎉Write group name need add🎉" style="text-align: center; background-color:black; color:cyan">
+    <br><br>
+    <input type="button" id="change" onclick="gtv()" value="Go to view =>"><br><br>
+    
+</div>
+    </div>
+
+     
+    </div>
+    </div>
+    <div id="rec">
+    <div id="receive" align="center">
+        <p id="myname2"></p>
+        <h1 id="viewfile">View file</h1>
+       <table id="MYpc22">
+        <tr>
+            <td>
+            <div id="maba">
+            <button id="groupdelete" onclick="groupdelete()" style="background-color: green; color:cyan">😢Delete😢Group😢</button>
+            </div>
+            </td>
+            <td>
+                
+                <button id="accending" onclick="arrange()" style="background-color: palevioletred;">Default</button>
+                
+            </td>
+        </tr>
+       </table>
+         <div id="MYsimu">
+            <div id="maba">
+            <button id="groupdelete" onclick="groupdelete()" style="background-color: green; color:cyan">😢Delete😢Group😢</button>
+            </div>
+            <br><br><br>
+            <button id="accending" onclick="arrange()" style="background-color: palevioletred;">Default</button>
+         </div>
+       <br><br>
+        <button id="change" onclick="bfu()"><= Back from upload?</button>
+        <br name="mbl"><br name="mbl"><br name="mbl">&nbsp;&nbsp;&nbsp;
+        <a id="gtst"></a>
+        <br><br><br>
+        <div id="dod2" style="display: none;"></div>
+      
+        <div id="coverselect">
+            <div id="select"></div>
+        </div>&nbsp;&nbsp;&nbsp;
+
+        <div id="audioBTN2">
+            <button id="audioBTN" onclick="playPlaylist()">play all audio</button><br>
+           
+        <br>
+        </div>
+        <div id="videoBTN2">
+            <button id="videoBTN" onclick="playVideolist()">play all video</button><br>
+        </div>
+       
+       
+        <p id="pro"></p>
+    <h2>
+        <ol>
+            <div id="dataR"></div>
+        </ol>
+    </h2><br><br>
+    <button id="change" onclick="bfu()"><= Back from upload?</button>
+    <br name="mbl"><br name="mbl"><br name="mbl">&nbsp;&nbsp;&nbsp;
+    
+    <a id="delete2"></a>
+    
+    <br><br>
+    </div>
+    
+    <div class="secrete" id="secrete"></div>
+    <div class="secrete" id="secrete2"></div>
+    <div class="secrete" id="secrete3"></div>
+    <div class="secrete" id="secrete4"></div>
+</div>
+</div><br>
+
+   
+    <script>
+        function mobile(){
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+        if(!mobile()){
+            document.getElementById("appm").style.display = 'none';
+            
+        }
+       
+      function seperate(){
+        if(mobile()){
+            document.getElementById("mypc").remove("total");
+        }
+        else{
+            document.getElementById("myphone").remove("total");
+        }
+      }
+      seperate();
+        //id="accending" onclick="arrange()" style="background-color: palevioletred;">Default
+       
+        document.getElementById("menus").style.display = "none";
+        mL = 0;
+        function menu(){
+            if(mL == 0){
+                document.getElementById("menus").style.display = "block";
+                document.getElementById("menu").innerHTML = "CLOSE MENU";
+                this.mL = 1;
+            }
+            else{
+                document.getElementById("menus").style.display = "none";
+                document.getElementById("menu").innerHTML = "OPEN MENU";
+                this.mL = 0;
+            }
+        }
+        function myname(){
+            fetch("myname2.php")
+            .then(response => response.json())
+            .then(data => {
+                sname = data.split("*")[1];
+                localStorage.setItem("sname",this.sname);
+
+                data2 = data.split("*")[0];
+                document.getElementById("myname").innerHTML = "User: 🎉"+data2+"🎉";
+                document.getElementById("myname2").innerHTML = "User: 🎉"+data2+"🎉";
+
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        myname();
+        function you2(){
+            fetch("http://localhost/sendfile/you.php")
+            .then(response => response.json())
+            .then(data => {
+                
+                document.getElementById("maba").style.display = "black";
+                
+            })
+            .catch(error => {
+                sname = localStorage.getItem("sname");
+                pname = localStorage.getItem("tname") || "coder";
+                if(sname == pname){
+                    document.getElementById("maba").style.display = "black";
+                }
+                else{
+                    document.getElementById("maba").style.display = "none";
+                    document.getElementById("nameshow").style.display = "none";
+                    document.getElementById("visitor").innerHTML = "🎉VISITOR";
+                }
+
+                
+            });  
+        }
+        you2();
+       
+
+        function profile(){
+            fetch("myprofile.php")
+            .then(response => response.json())
+            .then(data => {
+                document.body.style.backgroundImage = "url("+data+")";
+                document.body.style.backgroundPosition = "center";
+                document.body.style.backgroundSize = "cover";
+
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        profile();
+        function autoAlert(message, timeout = 2000,top = 20) {
+            let alertBox = document.createElement("div");
+            alertBox.innerHTML = message;
+            alertBox.style.cssText = ` position: fixed;
+            top: ${top}px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: green;
+            color: cyan;
+            font-size: large;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000; `;
+            document.body.appendChild(alertBox);
+            if(timeout != -2024){
+                setTimeout(() => {
+                alertBox.remove();
+                }, timeout);
+            }
+            
+            }
+           
+            function mbls(){ //ikiwa simu weka
+                if(!mobile()){
+    
+                    mblData = document.getElementsByName("mbl");
+                    document.getElementById("MYsimu").remove("total");
+                for(m of mblData){
+                    m.style.display = "none";
+                }
+                }
+                else{
+                    document.getElementById("MYpc22").remove("total");
+                }
+                
+            }
+           
+            mbls();
+           // setInterval(partFiles,1000);
+           
+    </script>
+    <script src="myanimation.js"></script>
+    <script>
+        
+         function mysearchFN(){
+            fetch("mysearch.php")
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("searchData").innerHTML = '<option value="" name="mysch">'.repeat(data.length);
+                n = 0;
+                for(d of data){
+                    document.getElementsByName("mysch")[n].value = d;
+                    
+                    n ++;
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        mysearchFN();
+        function Check(){
+            fetch("mysearch.php")
+            .then(response => response.json())
+            .then(data => {
+                if(data.includes(document.getElementById("searchInput").value)){
+                    autoAlert("🎉Correct group, now open🎉");
+                    document.getElementById("option").value = document.getElementById("searchInput").value;
+                    table();
+                }
+                else if(document.getElementById("searchInput").value){
+                    autoAlert("😢Incorrect group😢");
+                }
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        function futa(){
+            document.getElementById("searchInput").value = "";
+        }
+        
+        //setInterval(Check,1000);
+    </script>
+</div>    
+
+</body>
+</html>

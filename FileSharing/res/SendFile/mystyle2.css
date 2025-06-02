@@ -1,0 +1,12 @@
+#upload{
+    animation: pop 1s alternate;
+    transform: scale(0.9);
+    transform-origin: center;
+}
+.containerall{
+    display: grid;
+    grid-template-columns: 
+    repeat(auto-fit,minimax(250px,1fx));
+    gap: 10px;
+    padding: 8px;
+}

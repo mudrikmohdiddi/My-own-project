@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilesendMC</title>
+    <style>
+        #upload{
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            border-radius: 10px;
+            animation: pop 1s alternate;
+            text-align: center;
+            
+        }
+        .upload{
+            text-align: center;
+
+        }
+        @keyframes pop {
+            0% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+        input,button{
+            width: 300px;
+            height: 50px;
+            border: 1px solid blue;
+            font-size: large;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+       
+    </style>
+</head>
+<img bgcolor="green">
+    <div class="upload">
+    <div id="upload">
+        <p id="myname"></p>
+        <h1>🎉Welcome🎉</h1>
+        <h1>🎉File Send By Mudrik Coder🎉</h1>
+        <p>🎉1. Click hire for transfer your document🎉</p><br><br>
+        <a href="send.html"><button>Transfer your document🎉</button></a><br><br>
+        <h1>🎉FileSendMC🎉</h1><br>
+        <h1>🗑️Robotic dustbin🗑️</h1>
+        <a href="../DustBin/rdmc.html"><button>🗑️Open dustbin🗑️</button></a><br><br>
+        <h1>📚💻W3SHOOL🌐</h1>
+        <a href="W3SCHOOL/index.html"><button>📚Open W3SCHOOL💻🌐</button></a><br><br>
+    </div></div>
+    <script>
+        function myname(){
+            fetch("myname2.php")
+            .then(response => response.json())
+            .then(data => {
+                sname = data.split("*")[1];
+                localStorage.setItem("sname",this.sname);
+
+                data2 = data.split("*")[0];
+                document.getElementById("myname").innerHTML = "User: 🎉"+data2+"🥳";
+               
+
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        myname();
+
+        function profile(){
+            fetch("myprofile.php")
+            .then(response => response.json())
+            .then(data => {
+                document.body.style.backgroundImage = "url('"+data+"')";
+                document.body.style.backgroundPosition = "center";
+                document.body.style.backgroundSize = "cover";
+
+            })
+            .catch(error => console.error("Error:", error));
+        }
+        profile();
+    </script>
+    
+</body>
+</html>
