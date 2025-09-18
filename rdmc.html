@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robotic Dustbin</title>
+  <link rel="stylesheet" href="res/style2.css">
+  
+</head>
+<body>
+  <header>
+    <h1>Robotic Dustbin - Smart Waste Manager</h1>
+  </header>
+
+  <div class="container">
+    <!-- Card 1: Waste Status -->
+    <div class="card">
+      <h2>Waste status</h2>
+      <div id="data" class="output-text">No  information available...</div>
+      <img id="wasteImage" src="res/default_waste.jpg" alt="Waste status" class="status-image" style="height: 100%; width:100%;" />
+    </div>
+
+    <!-- Card 2: Lid Status -->
+    <div class="card">
+      <h2>Dustbin door status</h2>
+      <div id="data4" class="output-text">No  information available...</div>
+      <img id="opcl" src="res/norep.jpg" alt="Lid status" class="status-image" style="height: 100%;width:100%;"/>
+    </div>
+
+    
+    <!-- Card 3: Ujazo wa mataka non-metal -->
+    <div class="card">
+      <h1 style="text-align: center;">Dustbin Non-metal-waste Level</h1>
+      <div id="dustbin-container">
+          <div id="waste-level" style="height: 0%;"></div>
+      </div>
+      <p id="waste-percentage">Waste Level: 0%</p>
+      <p id="loading">Fetching data...</p>
+      
+    </div>
+    <!-- Card 4: Ujazo wa mataka metal-->
+    <div class="card">
+      <h1 style="text-align: center;">Dustbin Metal-Waste Level</h1>
+      <div id="dustbin-container-metal">
+          <div id="waste-level-metal" style="height: 0%;"></div>
+      </div>
+      <p id="waste-percentage-metal">Metal-Waste Level: 0%</p>
+      <p id="loadingMetal">Fetching data...</p>
+      
+    </div>
+
+    <!-- Card 5: Language Selector -->
+    <div class="card">
+      <h2>Chagua Lugha</h2>
+      <select id="language" class="language">
+        <option value="English">English</option>
+        <option value="Swahili">Swahili</option>
+        <option value="China">China</option>
+        <option value="French">French</option>
+        <option value="Arabic">Arabic</option>
+      </select>
+    </div>
+  </div>
+
+  <script src="res/script3.js"></script>
+  
+  <script>
+    function updateMetal(wasteLevel){
+    const wasteElement = document.getElementById('waste-level-metal');
+    const percentageElement = document.getElementById('waste-percentage-metal');
+
+    // Update height based on percentage
+    wasteElement.style.height = `${wasteLevel}%`;
+
+    // Update percentage text
+    percentageElement.textContent = `Waste Level: ${wasteLevel}%`;
+
+    // Change color based on level (low, medium, high)
+    if (wasteLevel < 40) {
+        wasteElement.style.backgroundColor = "#4caf50"; // Green
+        alarmTriggered = 0; // Reset alarm trigger
+    } else if (wasteLevel < 80) {
+        wasteElement.style.backgroundColor = "#ffc107"; // Yellow
+        alarmTriggered = 0; // Reset alarm trigger
+    } else {
+        wasteElement.style.backgroundColor = "#f44336"; // Red
+        
+    }
+}
+
+const fetchDataSpt = async () => {
+    try {
+        const responseIp = await fetch("ipadress.php");
+        const dataIp = await responseIp.json();
+        const ipAddress = dataIp.trim();
+
+        const response = await fetch("http://"+ipAddress+":8080/api/waste/latest");
+        const data = await response.json();
+
+        // Get the latest waste level (assume field1 contains percentage)
+        const wasteLevel = data.levelMetal;
+
+        if (isNaN(wasteLevel)) {
+            document.getElementById('loadingMetal').textContent = "Invalid data received.";
+            return;
+        }
+
+        updateMetal(wasteLevel);
+        document.getElementById('loadingMetal').style.display = 'none';
+    } catch (error) {
+        console.error("Error fetching data from ThingSpeak:", error);
+        document.getElementById('loadingMetal').textContent = "Failed to fetch data.";
+    }
+};
+fetchDataSpt();
+setInterval(fetchDataSpt, 10000);
+
+  </script>
+</body>
+</html>
